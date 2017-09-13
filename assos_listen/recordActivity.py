@@ -139,6 +139,7 @@ def recordAudioSegments(BLOCKSIZE, Fs):
                     else:
                         mean_energy100_zero = numpy.mean(numpy.array(energy100_buffer_zero))
                         if (energy100 < 1.2 * mean_energy100_zero):
+                            #print("current energy: " + str(energy100))
                             if curActiveWindow.shape[0] > 0:                                    # if a sound has been detected in the previous segment:
                                 activeT2 = elapsedTime - BLOCKSIZE                              # set time of current active window
                                 if activeT2 - activeT1 > minActivityDuration:
@@ -147,6 +148,7 @@ def recordAudioSegments(BLOCKSIZE, Fs):
                                     wavfile.write(wavFileName, Fs, numpy.int16(curActiveWindow))# write current active window to file
 
                                     # store file at assos_store ftp container
+                                    #print(":: audio captured :: sending to assos_store container : " + wavFileName)
                                     storeFile(wavFileName)
 
                                 curActiveWindow = numpy.array([])                               # delete current active window
