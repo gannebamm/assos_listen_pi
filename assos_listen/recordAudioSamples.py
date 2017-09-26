@@ -51,7 +51,7 @@ def signal_handler(signal, frame):
 # MAIN FUNCTION
 def recordAudio(p, stream):
     sampleNumber = 0
-    while (sampleNumber < 6):
+    while (True):
         print("*  recording")
         sampleNumber = sampleNumber +1
 

@@ -6,7 +6,7 @@ upload = False
 sensorID = "al_01"
 
 # sampling rate
-samplingRate = 16000 # 44100 is to much for raspberry pi 3
+samplingRate = 44100 # 44100 is to much for raspberry pi 3
 # choices=[4000, 8000, 16000, 32000, 44100] :: default 16000
 
 # sample length in seconds
