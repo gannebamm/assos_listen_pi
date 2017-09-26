@@ -69,12 +69,13 @@ def recordAudio(p, stream):
         wf.close()
         print("file #"+str(sampleNumber)+" written")
 
-        # since waiting for the upload to finish will take some time
-        # and we do not want to have gaps in our sample
-        # we start the upload process in parallel
-        print("start uploading...")
-        uploadProcess = Process(target=storeFile, args=(fileName,))
-        uploadProcess.start()
+        if (config.upload == True):
+            # since waiting for the upload to finish will take some time
+            # and we do not want to have gaps in our sample
+            # we start the upload process in parallel
+            print("start uploading...")
+            uploadProcess = Process(target=storeFile, args=(fileName,))
+            uploadProcess.start()
 
 
 

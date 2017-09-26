@@ -1,4 +1,6 @@
 ### configuration file for assos_listen
+# upload
+upload = False
 
 # config for this sensor
 sensorID = "al_01"
